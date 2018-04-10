@@ -6367,7 +6367,7 @@ App({
     cdnUrl: 'http://cdn.jisuapp.cn',
     defaultPhoto: 'http://cdn.jisuapp.cn/zhichi_frontend/static/webapp/images/default_photo.png',
     siteBaseUrl: 'https://xcx.yingyonghao8.com',
-    appTitle: '砍价狂',
+    appTitle: '宝宝商城',
     appDescription: '小商品砍价平台。',
     appLogo: 'http://cdn.jisuapp.cn/zhichi_frontend/static/webapp/images/default_photo.png'
   }
