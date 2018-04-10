@@ -80,60 +80,7 @@
               <text>系统通知</text>
               <label class="ico-moon icon-rightarrow"></label>
             </view>
-            <view wx:elif="{{ item == 'vipCard' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/eCommerce/pages/vipCard/vipCard"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['vipCard']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['vipCard']['margin-top'] }}">
-              <label class="ico-moon icon-vip-card"></label>
-              <text>会员卡</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'coupon' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/eCommerce/pages/couponList/couponList"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['coupon']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['coupon']['margin-top'] }}">
-              <label class="ico-moon icon-coupon"></label>
-              <text>优惠券</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'myIntegral' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/userCenter/pages/myIntegral/myIntegral"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['myIntegral']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['myIntegral']['margin-top'] }}">
-              <label class="ico-moon icon-integral"></label>
-              <text>积分</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'balance' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/eCommerce/pages/balance/balance"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['balance']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['balance']['margin-top'] }}">
-              <label class="ico-moon icon-balance"></label>
-              <text>储值金</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'myGroup' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/eCommerce/pages/myGroup/myGroup"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['myGroup']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['myGroup']['margin-top'] }}">
-              <label class="ico-moon icon-group-buy"></label>
-              <text>我的拼团</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
-            <view wx:elif="{{ item == 'winningRecord' }}"
-                  catchtap="userCenterTurnToPage"
-                  data-router="/userCenter/pages/winningRecord/winningRecord"
-                  data-open-verify-phone="{{ data.customFeature.appendComponentAttr['winningRecord']['openVerifyPhone'] }}"
-                  style="margin-top: {{ data.customFeature.appendComponentAttr['winningRecord']['margin-top'] }}">
-              <label class="ico-moon icon-winningRecord"></label>
-              <text>中奖记录</text>
-              <label class="ico-moon icon-rightarrow"></label>
-            </view>
+           
             <view wx:elif="{{ item == 'myVideo' }}"
                   catchtap="userCenterTurnToPage"
                   data-router="/video/pages/videoUsercenter/videoUsercenter"

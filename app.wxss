@@ -4919,3 +4919,7 @@ a {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.app .wation-container {
+  display: flex;
+  margin: 10rpx 0;
+}
