@@ -1,0 +1,23 @@
+<view class="goods" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.goods_id}}" catchtap="turnToGoodsDetail">
+  <image class="goods-img" src="{{item.goods_img}}"></image>
+  <view class="info">
+    <view class="title">{{item.goods_title}}</view>
+    <view class="group-price {{item.normal_min_price != item.normal_max_price ? '': 'hide'}}">
+      拼团价：￥<text>{{item.normal_min_price}}</text>~￥<text>{{item.normal_max_price}}</text>
+      <view class="discount-tag">减价</view>
+    </view>
+    <view class="group-price {{item.normal_min_price == item.normal_max_price ? '': 'hide'}}">
+      拼团价：￥<text>{{item.normal_min_price}}</text>
+      <view class="discount-tag">减价</view>
+    </view>
+    <view class="single-price">单买价：￥{{item.goods_price}}</view>
+    <view class="grouping" hidden="{{item.group_buy_team_list.length == 0}}">
+      <text>{{item.group_buy_team_count}}个进行中的团：</text>
+      <image wx:for="{{item.group_buy_team_list}}" wx:for-item="leader" wx:key="" src="{{leader.leader_thumb}}"></image>
+    </view>
+    <view class="grouping" hidden="{{item.group_buy_team_list.length != 0}}">
+      <text>暂无进行中的团</text>
+    </view>
+  </view>
+</view>
+<view class="no-more" hidden="{{isMore === 0}}">没有更多了~</view>

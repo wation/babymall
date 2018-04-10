@@ -1,0 +1,77 @@
+<view class="app" hidden="{{page_hidden}}"><component-share pageQRCodeData="{{pageQRCodeData}}"></component-share>
+<component-backhome backToHomePage="{{backToHomePage}}"></component-backhome>
+<component-reward-point rewardPointObj="{{rewardPointObj}}"></component-reward-point>
+<component-shop-vip shopVipModal="{{shopVipModal}}"></component-shop-vip>
+<template name="zcTitle">
+  <view class="element title-ele {{ 'title-mode'+ (data.mode ? data.mode : '') }}" mode="{{data.mode}}" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+    <view class="title-content">
+      <view class="title-text">
+        <text class="mark" style="{{'background-color: ' + data.markColor}}"></text>
+        <text class="js-text">{{data.content}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcTitle" data="{{data:title_ele1, detail_data: detail_data}}"></template>
+</view>
+<template name="zcSeckill2">
+  <scroll-view class="element seckill scroll-ele goods-list-mode-{{data.customFeature.mode}}"
+               data-param="{{data.param}}"
+               data-compid="{{data.compId}}"
+               data-type="seckill-list"
+               style='{{data.style}}'
+               scroll-y="{{ data.customFeature.mode == 2 ? false : true }}"
+               scroll-x="{{ data.customFeature.mode == 2 ? true : false }}"
+               lower-threshold="10"
+               bindscrolltolower="seckillScrollFunc">
+    <view class="js-list-container">
+      <view class="goods-list-item background-ele "
+            wx:for="{{data.goods_data}}" wx:key="" data-id="{{item.form_data.id}}" style="{{data.list_style}}" data-contact="{{data.customFeature.ifUseContact}}" data-goods-type="{{item.form_data.goods_type}}"
+            catchtap="turnToSeckillDetail"
+            >
+        <view class="inner-content"><image class="list-img" src="{{item.form_data.cover}}" style="{{data.img_style}}" mode="aspectFit"></image><view class="title-container" style="width: {{data.title_width.width}};"><view class="title">{{item.form_data.title}}</view>
+          <view wx:if="{{data.customFeature.mode == 1 || data.customFeature.mode == 2}}" class="seckill-list-bottom {{item.form_data.seckill_start_state == 1 ? 'seckill-during' : ''}}{{item.form_data.seckill_start_state == 2 ? 'seckill-end' : ''}}" style="width: {{data.title_width.width}}">
+            <view>
+              <text class="price">￥{{item.form_data.seckill_price}}</text>
+              <text class="oldprice">￥{{item.form_data.price}}</text>
+            </view>
+            <view>
+              <view class="seckill-progress-wrap"><text>已售{{item.form_data.seckill_progress}}%</text><progress class="seckill-progress" percent="{{item.form_data.seckill_progress}}" stroke-width="6" activeColor="#fa6583" backgroundColor="#fff" /></view>
+              <view class="countdown">
+                <label wx:if="{{item.form_data.seckill_start_state == 0}}">距开始</label>
+                <label wx:elif="{{item.form_data.seckill_start_state == 1}}">距结束</label>
+                <label wx:elif="{{item.form_data.seckill_start_state == 2}}">已结束</label>
+                <text class="hours">{{item.form_data.downCount.hours}}</text>:<text class="minutes">{{item.form_data.downCount.minutes}}</text>:<text class="seconds">{{item.form_data.downCount.seconds}}</text>
+              </view>
+            </view>
+          </view>
+          <view wx:else class="seckill-list-bottom {{item.form_data.seckill_start_state == 1 ? 'seckill-during' : ''}}{{item.form_data.seckill_start_state == 2 ? 'seckill-end' : ''}}" style="width: {{data.title_width.width}}">
+            <view>
+              <text class="price">￥{{item.form_data.seckill_price}}</text>
+              <view class="countdown">
+                <label wx:if="{{item.form_data.seckill_start_state == 0}}">距开始</label>
+                <label wx:elif="{{item.form_data.seckill_start_state == 1}}">距结束</label>
+                <label wx:elif="{{item.form_data.seckill_start_state == 2}}">已结束</label>
+                <text class="hours">{{item.form_data.downCount.hours}}</text>:<text class="minutes">{{item.form_data.downCount.minutes}}</text>:<text class="seconds">{{item.form_data.downCount.seconds}}</text>
+              </view>
+            </view>
+            <view class="oldPrice-wrap">
+              <text class="oldprice">￥{{item.form_data.price}}</text>
+              <view class="seckill-progress-wrap"><text>已售{{item.form_data.seckill_progress}}%</text><progress class="seckill-progress" percent="{{item.form_data.seckill_progress}}" activeColor="#fa6583" backgroundColor="#fff" /></view>
+            </view>
+          </view>
+        </view></view>
+      </view>
+    </view>
+    <view class="loading-btn" wx:if="{{data.customFeature.vesselAutoheight == 1 && data.customFeature.loadingMethod == 1 && data.customFeature.mode != 2}}" data-compid="{{data.compId}}" bindtap="seckillScrollFunc">
+      <image wx:if="{{data.customFeature.loadingStyle == 'img'}}" mode="aspectFill" src="{{data.customFeature.loadingImg}}"></image>
+      <text wx:elif="{{data.customFeature.loadingStyle == 'text'}}" style="color: {{data.customFeature.loadingColor}};">{{data.customFeature.loadingText}}</text>
+    </view>
+  </scroll-view>
+</template>
+<view class="ele-container">
+  <template is="zcSeckill2" data="{{data:seckill2}}"></template>
+</view>
+
+</view>

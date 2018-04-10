@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "拼团详情",
+  "usingComponents": {
+    "component-reward-point": "\/components\/rewardPointModal\/rewardPointModal"
+  }
+}

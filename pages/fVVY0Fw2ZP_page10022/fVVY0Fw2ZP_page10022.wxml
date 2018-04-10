@@ -1,0 +1,12 @@
+<view class="app" hidden="{{page_hidden}}"><component-share pageQRCodeData="{{pageQRCodeData}}"></component-share>
+<component-backhome backToHomePage="{{backToHomePage}}"></component-backhome>
+<component-reward-point rewardPointObj="{{rewardPointObj}}"></component-reward-point>
+<component-shop-vip shopVipModal="{{shopVipModal}}"></component-shop-vip>
+<template name="zcWebview">
+  <web-view src="{{ data.content }}"></web-view>
+</template>
+<view class="ele-container webview">
+  <template is="zcWebview" data="{{data:webview1}}"></template>
+</view>
+
+</view>

@@ -1,0 +1,121 @@
+{
+    "pages": [
+        "pages/fVVY0Fw2ZP_page10000/fVVY0Fw2ZP_page10000",
+        "pages/fVVY0Fw2ZP_page10001/fVVY0Fw2ZP_page10001",
+        "pages/fVVY0Fw2ZP_page10002/fVVY0Fw2ZP_page10002",
+        "pages/fVVY0Fw2ZP_page10003/fVVY0Fw2ZP_page10003",
+        "pages/fVVY0Fw2ZP_page10004/fVVY0Fw2ZP_page10004",
+        "pages/fVVY0Fw2ZP_page10006/fVVY0Fw2ZP_page10006",
+        "pages/fVVY0Fw2ZP_page10008/fVVY0Fw2ZP_page10008",
+        "pages/fVVY0Fw2ZP_page10010/fVVY0Fw2ZP_page10010",
+        "pages/fVVY0Fw2ZP_page10017/fVVY0Fw2ZP_page10017",
+        "pages/fVVY0Fw2ZP_page10018/fVVY0Fw2ZP_page10018",
+        "pages/fVVY0Fw2ZP_page10019/fVVY0Fw2ZP_page10019",
+        "pages/fVVY0Fw2ZP_page10020/fVVY0Fw2ZP_page10020",
+        "pages/fVVY0Fw2ZP_page10021/fVVY0Fw2ZP_page10021",
+        "pages/fVVY0Fw2ZP_page10022/fVVY0Fw2ZP_page10022",
+        "pages/couponDetail/couponDetail",
+        "pages/orderDetail/orderDetail",
+        "pages/tabbarShoppingCart/tabbarShoppingCart",
+        "pages/tabbarMyOrder/tabbarMyOrder",
+        "pages/goodsDetail/goodsDetail",
+        "pages/userCenter/userCenter",
+        "pages/groupGoodsDetail/groupGoodsDetail",
+        "pages/classifyGoodsListPage/classifyGoodsListPage"
+    ],
+    "subPackages": [
+        {
+            "root": "default",
+            "pages": [
+                "pages/bindCellphone/bindCellphone",
+                "pages/advanceSearch/advanceSearch",
+                "pages/extensionPage/extensionPage"
+            ]
+        },
+        {
+            "root": "eCommerce",
+            "pages": [
+                "pages/myAddress/myAddress",
+                "pages/addAddress/addAddress",
+                "pages/transferPage/transferPage",
+                "pages/transferOrderDetail/transferOrderDetail",
+                "pages/transferPaySuccess/transferPaySuccess",
+                "pages/searchAddress/searchAddress",
+                "pages/couponList/couponList",
+                "pages/couponListPage/couponListPage",
+                "pages/couponReceiveListPage/couponReceiveListPage",
+                "pages/couponGoodsListPage/couponGoodsListPage",
+                "pages/makeComment/makeComment",
+                "pages/goodsAdditionalInfo/goodsAdditionalInfo",
+                "pages/logisticsPage/logisticsPage",
+                "pages/myOrder/myOrder",
+                "pages/goodsComment/goodsComment",
+                "pages/shoppingCart/shoppingCart",
+                "pages/verificationCodePage/verificationCodePage",
+                "pages/previewGoodsOrder/previewGoodsOrder",
+                "pages/goodsOrderDetail/goodsOrderDetail",
+                "pages/goodsOrderPaySuccess/goodsOrderPaySuccess",
+                "pages/vipCard/vipCard",
+                "pages/balance/balance",
+                "pages/recharge/recharge",
+                "pages/myGroup/myGroup",
+                "pages/groupRules/groupRules",
+                "pages/groupOrderDetail/groupOrderDetail",
+                "pages/groupCenter/groupCenter"
+            ]
+        },
+        {
+            "root": "userCenter",
+            "pages": [
+                "pages/myMessage/myMessage",
+                "pages/myIntegral/myIntegral",
+                "pages/winningRecord/winningRecord"
+            ]
+        },
+        {
+            "root": "awardManagement",
+            "pages": [
+                "pages/scratch/scratch",
+                "pages/luckyWheelDetail/luckyWheelDetail",
+                "pages/goldenEggs/goldenEggs"
+            ]
+        }
+    ],
+    "window": {
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": "50"
+    },
+    "tabBar": {
+        "borderStyle": "white",
+        "color": "#483E36",
+        "selectedColor": "#343434",
+        "backgroundColor": "#F6F6F6",
+        "list": [
+            {
+                "iconPath": "images/5abb450a99660.png",
+                "selectedIconPath": "images/5abb450a996b0.png",
+                "text": "首页",
+                "pagePath": "pages/fVVY0Fw2ZP_page10000/fVVY0Fw2ZP_page10000"
+            },
+            {
+                "iconPath": "images/5abb450ad0d18.png",
+                "selectedIconPath": "images/5abb450ad0d69.png",
+                "text": "购物车",
+                "pagePath": "pages/tabbarShoppingCart/tabbarShoppingCart"
+            },
+            {
+                "iconPath": "images/5abb450ae72af.png",
+                "selectedIconPath": "images/5abb450ae72ff.png",
+                "text": "我的",
+                "pagePath": "pages/fVVY0Fw2ZP_page10002/fVVY0Fw2ZP_page10002"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
+}

@@ -1,0 +1,91 @@
+<component-reward-point rewardPointObj="{{rewardPointObj}}"></component-reward-point>
+<view class="order-status">
+  <view style="margin-bottom:20rpx;" hidden="{{!(list.form_data.group_buy_order_info.current_status == 1)}}">未开团</view>
+  <view style="margin-bottom:20rpx;" hidden="{{!(list.form_data.group_buy_order_info.current_status == 2)}}">拼团中</view>
+  <view style="margin-bottom:20rpx;" hidden="{{!(list.form_data.group_buy_order_info.current_status == 3)}}">拼团成功</view>
+  <view style="margin-bottom:20rpx;" hidden="{{!(list.form_data.group_buy_order_info.current_status == 4)}}">拼团失败</view>
+  <view style="margin-bottom:20rpx;" hidden="{{!(list.form_data.group_buy_order_info.current_status == 5)}}">拼团结束</view>
+  <view style="font-size:26rpx;">团号：{{list.form_data.team_token}}</view>
+</view>
+<view class="contact-info container">
+  <view class="ico-moon icon-location"></view>
+  <view class="detail-info">
+    <view class="address">配送地址：{{list.form_data.address_info.province.text+list.form_data.address_info.city.text+list.form_data.address_info.district.text+list.form_data.address_info.detailAddress}}</view>
+    <view class="address">联系人：{{list.form_data.address_info.name}}</view>
+    <view class="address">联系电话：{{list.form_data.address_info.contact}}</view>
+  </view>
+</view>
+<view class="contact-info container">
+  <view class="ico-moon icon-comment"></view>
+  <view class="detail-info">
+    <view class="address">买家留言</view>
+    <view class="address">{{list.form_data.remark}}</view>
+  </view>
+</view>
+<view class="container order-detail">
+  <view class="order-id">订单号：{{list.order_id}}</view>
+  <view class="goods-wrap">
+    <image src="{{list.form_data.goods_info[0].cover}}"></image>
+    <view class="middle">
+      <view class="goods-name">{{list.form_data.goods_info[0].goods_name}}</view>
+      <view class="goods-spec">{{list.form_data.goods_info[0].model_value}}</view>
+    </view>
+    <view class="price">
+      <view class="pay-price">￥{{list.form_data.goods_info[0].original_price}}</view>
+      <view class="origin-price">拼团(-￥{{list.form_data.group_buy_order_info.discount_price}})</view>
+      <view class="num">x{{list.form_data.goods_info[0].num}}</view>
+    </view>
+  </view>
+  <view class="discount">
+    <view class="content">
+      <view class="ico-moon icon-group-pay"></view>储值金：{{list.form_data.use_balance}}
+    </view>
+    <view class="content">
+      <view class="ico-moon icon-coupon"></view>优惠方式：{{list.form_data.selected_benefit.title}}
+    </view>
+  </view>
+  <view class="order-info">共{{list.form_data.goods_info[0].num}}件商品 实付：
+    <text class="red-price">￥{{list.form_data.total_price}}</text> (含运费￥{{list.express_fee}})</view>
+
+  <view class="progress" hidden="{{list.form_data.group_buy_order_info.team_member_list.length === 0}}">
+    <view class="title">拼团进度：</view>
+    <view class="head-logo">
+      <view class="group-leader">
+        <image src="{{list.form_data.group_buy_order_info.team_member_list[0].thumb}}"></image>
+        <view class="tag">团长</view>
+      </view>
+      <image class="members" hidden="{{!(list.form_data.group_buy_order_info.team_member_list.length == 2)}}" src="{{list.form_data.group_buy_order_info.team_member_list[1].thumb || 'http://img.weiye.me/zcimgdir/album/file_5962e4a58e9f6.png'}}"></image>
+      <image class="members" hidden="{{!(list.form_data.group_buy_order_info.team_member_list.length == 3)}}" src="{{list.form_data.group_buy_order_info.team_member_list[2].thumb || 'http://img.weiye.me/zcimgdir/album/file_5962e4a58e9f6.png'}}"></image>
+      <image class="members" hidden="{{!(list.form_data.group_buy_order_info.team_member_list.length == 4)}}" src="{{list.form_data.group_buy_order_info.team_member_list[3].thumb || 'http://img.weiye.me/zcimgdir/album/file_5962e4a58e9f6.png'}}"></image>
+      <view class="omit">...</view>
+      <view class="more-members">?</view>
+    </view>
+    <view class="total-mumber">已拼
+      <text class="red-price">{{list.form_data.group_buy_order_info.current_user_count}}</text>人，还差
+      <text class="red-price">{{list.form_data.group_buy_order_info.max_user_num-list.form_data.group_buy_order_info.current_user_count}}</text>人成团</view>
+  </view>
+
+  <view class="group-info">
+    <view class="centent">下单时间：{{list.form_data.add_time}}</view>
+    <view class="centent">拼团人数：{{list.form_data.group_buy_order_info.max_user_num}}人团</view>
+    <view class="centent">拼团时限：{{list.form_data.group_buy_order_info.hour_of_duration}}小时{{list.form_data.group_buy_order_info.minute_of_duration}}分钟</view>
+    <view class="centent" hidden="{{!(list.form_data.group_buy_order_info.current_status == 3)}}">结束时间：{{list.form_data.group_buy_order_info.expired_time}}</view>
+    <view class="centent" hidden="{{!(list.form_data.group_buy_order_info.current_status == 3)}}">成功时间：{{list.form_data.group_buy_order_info.success_time}}</view>
+  </view>
+</view>
+
+<view class="group-btn" hidden="{{!(list.form_data.group_buy_order_info.current_status == 1)}}">
+  <view class="btn white hide">取消拼团</view>
+  <view class="btn red" data-id="{{list.form_data.order_id}}" data-type="{{list.form_data.goods_type}}" bindtap="pay">立即支付</view>
+</view>
+<view class="group-btn" hidden="{{!(list.form_data.group_buy_order_info.current_status == 2)}}">
+  <button class="btn red" open-type="share" data-detail="{{list.form_data.goods_info[0].goods_id}}">分享</button>
+</view>
+<view class="group-btn" hidden="{{!(list.form_data.group_buy_order_info.current_status == 3)}}">
+  <view class="btn white" style="color:#000;" bindtap="goToOrderDetail">查看订单</view>
+  <view class="btn yellow" data-id="{{list.form_data.goods_info[0].goods_id}}" bindtap="onceMore">再拼一次</view>
+</view>
+<view class="group-btn" hidden="{{!(list.form_data.group_buy_order_info.current_status == 4)}}">
+  <view class="btn white" data-id="{{list.form_data.order_id}}" bindtap="retrieveMoney" hidden="{{list.form_data.group_buy_order_info.current_status == 7}}">已收到退款</view>
+  <view class="btn yellow" data-id="{{list.form_data.goods_info[0].goods_id}}" bindtap="onceMore">再拼一次</view>
+</view>
