@@ -20,6 +20,7 @@
         "pages/tabbarShoppingCart/tabbarShoppingCart",
         "pages/tabbarMyOrder/tabbarMyOrder",
         "pages/goodsDetail/goodsDetail",
+        "pages/goodsDetailMore/goodsDetailMore",
         "pages/userCenter/userCenter",
         "pages/groupGoodsDetail/groupGoodsDetail",
         "pages/classifyGoodsListPage/classifyGoodsListPage"
